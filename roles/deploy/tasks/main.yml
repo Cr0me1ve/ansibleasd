@@ -1,0 +1,20 @@
+---
+- name: Include install docker tasks
+  include_tasks: install_docker.yml
+  tags:
+    - deploy
+
+- name: Include clone repositories tasks
+  include_tasks: clone_repositories.yml
+  tags:
+    - deploy
+
+- name: Include start services tasks
+  include_tasks: start_services.yml
+  tags:
+    - start
+
+- name: Include stop services tasks
+  include_tasks: stop_services.yml
+  tags:
+    - stop

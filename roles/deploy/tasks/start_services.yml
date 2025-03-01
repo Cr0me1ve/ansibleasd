@@ -5,5 +5,3 @@
     chdir: /home/{{ ansible_user }}/lab3
   notify:
     - restart nginx
-  tags:
-    - start
