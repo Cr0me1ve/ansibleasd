@@ -1,26 +1,19 @@
----
-- name: Check current docker-compose version.
-  command: "{{ docker_compose_path }} --version"
-  register: docker_compose_vsn
-  check_mode: false
-  changed_when: false
-  failed_when: false
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
 
-- set_fact:
-    docker_compose_current_version: "{{ docker_compose_vsn.stdout | regex_search('(\\d+(\\.\\d+)+)') }}"
-  when: >
-    docker_compose_vsn.stdout is defined
-    and (docker_compose_vsn.stdout | length > 0)
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
 
-- name: Delete existing docker-compose version if it's different.
-  file:
-    path: "{{ docker_compose_path }}"
-    state: absent
-  when: >
-    docker_compose_current_version is defined
-    and (docker_compose_version | regex_replace('v', '')) not in docker_compose_current_version
-
-- name: Install Docker Compose (if configured).
-  get_url:
-    url: "{{ docker_compose_url }}"
-    mode: 0755
+- name: Update apt and install docker-ce
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: true
+    
+- name: Install Docker Module for Python
+  pip:
+    name: docker
