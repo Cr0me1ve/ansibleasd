@@ -13,8 +13,3 @@
   include_tasks: start_services.yml
   tags:
     - start
-
-- name: Include stop services tasks
-  include_tasks: stop_services.yml
-  tags:
-    - stop
