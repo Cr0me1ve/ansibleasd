@@ -23,9 +23,4 @@
 - name: Install Docker Compose (if configured).
   get_url:
     url: "{{ docker_compose_url }}"
-    dest: "{{ docker_compose_path }}"
     mode: 0755
-  when: >
-    (docker_compose_current_version is not defined)
-    or (docker_compose_current_version | length == 0)
-    or (docker_compose_current_version is version((docker_compose_version | regex_replace('v', '')), '<'))
