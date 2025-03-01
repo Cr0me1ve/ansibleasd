@@ -2,7 +2,7 @@
 - name: Install Docker and Docker Compose
   hosts: all
   become: yes
-  tasks:
+- tasks:
     - name: Update apt cache
       apt:
         update_cache: yes
