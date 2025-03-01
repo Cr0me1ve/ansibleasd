@@ -1,6 +1,11 @@
 ---
 - name: Deploy frontend and backend microservices
-  hosts: hosts
+  hosts: localhost
   become: yes
   roles:
-    - deploy
+    - role: deploy
+      tags: 
+        - install_docker
+        - clone_repositories
+        - start_services
+
