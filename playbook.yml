@@ -1,6 +1,11 @@
 ---
-- name: Deploy Microservices with Ansible
-  hosts: all
+- name: Deploy frontend and backend microservices
+  hosts: localhost
   become: yes
   roles:
-    - deploy
+    - role: deploy
+      tags: 
+        - install_docker
+        - clone_repositories
+        - start_services
+
