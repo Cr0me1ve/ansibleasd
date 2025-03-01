@@ -7,7 +7,7 @@
     default_container_image: ubuntu
     default_container_command: sleep 1d
 
-  tasks:
+- tasks:
     - name: Install aptitude
       apt:
         name: aptitude
