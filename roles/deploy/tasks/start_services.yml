@@ -4,8 +4,3 @@
   args:
     chdir: /app/devops/
   notify: restart docker services
-
-
-- name: Show start output
-  debug:
-    var: start_output.stdout_lines
