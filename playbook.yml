@@ -5,7 +5,7 @@
   roles:
     - role: deploy
       tags: 
-        - install_docker
-        - clone_repositories
-        - start_services
+        - install
+        - clone
+        - start
 
