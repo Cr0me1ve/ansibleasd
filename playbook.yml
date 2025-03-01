@@ -1,0 +1,6 @@
+---
+- name: Deploy frontend and backend microservices
+  hosts: hosts
+  become: yes
+  roles:
+    - deploy

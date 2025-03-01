@@ -1,0 +1,5 @@
+---
+- name: Stop services using Docker Compose
+  command: docker-compose down
+  args:
+    chdir: /app/devops/
