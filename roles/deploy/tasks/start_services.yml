@@ -1,5 +1,5 @@
----
-- name: Start services with Docker Compose
-  docker_compose:
+- name: Run Docker Compose
+  community.docker.docker_compose:
     project_src: home/devops
+    build: yes
     state: present
