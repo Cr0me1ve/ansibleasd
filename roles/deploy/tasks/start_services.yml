@@ -1,5 +1,5 @@
-- name: Run Docker Compose
-  community.docker.docker_compose:
-    project_src: home/devops
-    build: yes
-    state: present
+---
+- name: Start services with Docker Compose
+  command: docker-compose up
+  args:
+    chdir: /home/devops
