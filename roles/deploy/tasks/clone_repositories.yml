@@ -2,4 +2,5 @@
 - name: Clone repositories
   git:
     repo: https://github.com/Cr0me1ve/lab3.git
-    dest: /home/{{ ansible_user }}/lab3
+    dest: /home/devops
+    version: 'main'
