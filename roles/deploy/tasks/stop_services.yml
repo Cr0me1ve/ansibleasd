@@ -1,5 +1,5 @@
 ---
-- name: Stop services using Docker Compose
+- name: Stop services with Docker Compose
   command: docker-compose down
   args:
-    chdir: /app/devops/
+    chdir: /home/{{ ansible_user }}/lab3

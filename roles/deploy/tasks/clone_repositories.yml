@@ -1,5 +1,5 @@
 ---
-- name: Clone frontend repository
+- name: Clone repositories
   git:
     repo: https://github.com/Cr0me1ve/lab3.git
-    dest: /app/devops/
+    dest: /home/{{ ansible_user }}/lab3

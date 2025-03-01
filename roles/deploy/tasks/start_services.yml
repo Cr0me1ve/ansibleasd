@@ -1,6 +1,7 @@
 ---
-- name: Start services using Docker Compose
+- name: Start services with Docker Compose
   command: docker-compose up -d
   args:
-    chdir: /app/devops/
-  notify: restart docker services
+    chdir: /home/{{ ansible_user }}/lab3
+  notify:
+    - restart nginx
