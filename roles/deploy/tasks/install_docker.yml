@@ -1,4 +1,4 @@
-- hosts: "{{ HOSTS }}"
+  hosts: "{{ HOSTS }}"
   name: Install Docker
   become: yes
   vars:
